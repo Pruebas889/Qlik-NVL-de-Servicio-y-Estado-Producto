@@ -606,324 +606,307 @@ def extract_excel_contents(path: str) -> dict | None:
 
 
 def upload_to_google_sheets(extracted: dict, spreadsheet_id: str, credentials_json_path: str, clear: bool = True, target_sheet: str | None = 'Sheet2') -> bool:
-	try:
-		try:
-			import gspread
-			from google.oauth2 import service_account
-		except Exception:
-			return False
+    try:
+        try:
+            import gspread
+            from google.oauth2 import service_account
+        except Exception:
+            return False
 
-		scopes = [
-			'https://www.googleapis.com/auth/spreadsheets',
-			'https://www.googleapis.com/auth/drive'
-		]
-		creds = service_account.Credentials.from_service_account_file(credentials_json_path, scopes=scopes)
-		client = gspread.authorize(creds)
-		sh = client.open_by_key(spreadsheet_id)
+        scopes = [
+            'https://www.googleapis.com/auth/spreadsheets',
+            'https://www.googleapis.com/auth/drive'
+        ]
+        creds = service_account.Credentials.from_service_account_file(credentials_json_path, scopes=scopes)
+        client = gspread.authorize(creds)
+        sh = client.open_by_key(spreadsheet_id)
 
-		if target_sheet:
-			try:
-				first_sheet = next(iter(extracted.keys()))
-				rows = extracted.get(first_sheet, [])
-				safe_name = str(target_sheet)[:100]
-				try:
-					ws = sh.worksheet(safe_name)
-				except Exception:
-					ws = sh.add_worksheet(title=safe_name, rows=max(100, len(rows) + 5), cols=20)
+        if target_sheet:
+            try:
+                first_sheet = next(iter(extracted.keys()))
+                rows = extracted.get(first_sheet, [])
+                safe_name = str(target_sheet)[:100]
+                
+                try:
+                    ws = sh.worksheet(safe_name)
+                except Exception:
+                    ws = sh.add_worksheet(title=safe_name, rows=max(100, len(rows) + 5), cols=20)
 
-				if clear:
-					try:
-						rc = getattr(ws, 'row_count', None)
-						if rc and isinstance(rc, int) and rc > 1:
-							ws.batch_clear([f"2:{rc}"])
-						else:
-							ws.batch_clear(["2:1000"])
-					except Exception:
-						pass
+                # ====== LIMPIAR SOLO LAS COLUMNAS QUE VAMOS A USAR ======
+                if clear:
+                    try:
+                        all_values = ws.get_all_values()
+                        if len(all_values) > 1:
+                            last_row = len(all_values)
+                            num_columns = len(headers) + 1 if rows else 1
+                            last_col_letter = chr(64 + num_columns)  # Convierte número a letra (1=A, 2=B, etc)
+                            clear_range = f"A2:{last_col_letter}{last_row}"
+                            ws.batch_clear([clear_range])
+                            LOG.info(f"✅ Columnas A-{last_col_letter} limpiadas desde fila 2 hasta {last_row} en '{safe_name}'")
+                        else:
+                            LOG.info(f"No hay datos previos que limpiar en '{safe_name}'")
+                    except Exception as e:
+                        LOG.warning(f"Error al limpiar columnas: {e}")
 
-				date_str = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-				
-				if rows:
-					headers = list(rows[0].keys()) if rows else []
-					table_data = []
-					for r in rows:
-						row = [date_str]
-						for h in headers:
-							row.append(r.get(h, ''))
-						table_data.append(row)
-					
-					try:
-						ws.update('A2', table_data)
-						LOG.info('upload_to_google_sheets: hoja %s actualizada (%d filas)', safe_name, len(rows))
-					except Exception:
-						pass
-			except Exception:
-				pass
-		
-		return True
-	except Exception:
-		return False
-
+                # Preparar datos
+                date_str = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+                
+                if rows:
+                    headers = list(rows[0].keys()) if rows else []
+                    table_data = []
+                    for r in rows:
+                        row = [date_str]
+                        for h in headers:
+                            row.append(r.get(h, ''))
+                        table_data.append(row)
+                    
+                    try:
+                        ws.update('A2', table_data)
+                        LOG.info(f'✓ Sheet "{safe_name}" actualizada con {len(table_data)} filas')
+                        LOG.info(f'✅ Columnas {chr(65 + len(headers))} en adelante permanecen intactas')
+                    except Exception as e:
+                        LOG.error(f"Error al actualizar: {e}")
+            except Exception:
+                pass
+        
+        return True
+    except Exception:
+        return False
 
 def detect_data_type_and_upload(extracted: dict, spreadsheet_id: str, credentials_json_path: str, clear: bool = True) -> bool:
-	"""
-	Detecta el tipo de datos (PDV, Zona o Clasificacion) y distribuye en hojas correspondientes
-	
-	Si el archivo contiene:
-	- Columna A: "PDV" y Columna B: "Nivel de Servicio" → Sube a "Puntos_Venta"
-	- Columna A: "Zona" y Columna B: "Nivel de Servicio" → Sube a "Zonas"
-	- Columna A: "Clasificacion" y Columna B: "Nivel de Servicio" → Sube a "Clasificacion"
-	"""
-	try:
-		try:
-			import gspread
-			from google.oauth2 import service_account
-		except Exception:
-			LOG.error("Falta gspread o google-auth")
-			return False
+    """
+    Detecta el tipo de datos (PDV, Zona o Clasificacion) y distribuye en hojas correspondientes
+    LIMPIANDO SOLO LAS COLUMNAS QUE ESCRIBE
+    """
+    try:
+        try:
+            import gspread
+            from google.oauth2 import service_account
+        except Exception:
+            LOG.error("Falta gspread o google-auth")
+            return False
 
-		scopes = [
-			'https://www.googleapis.com/auth/spreadsheets',
-			'https://www.googleapis.com/auth/drive'
-		]
-		creds = service_account.Credentials.from_service_account_file(credentials_json_path, scopes=scopes)
-		client = gspread.authorize(creds)
-		sh = client.open_by_key(spreadsheet_id)
+        scopes = [
+            'https://www.googleapis.com/auth/spreadsheets',
+            'https://www.googleapis.com/auth/drive'
+        ]
+        creds = service_account.Credentials.from_service_account_file(credentials_json_path, scopes=scopes)
+        client = gspread.authorize(creds)
+        sh = client.open_by_key(spreadsheet_id)
 
-		# ====== PROCESAMIENTO DE CADA SHEET EXTRAÍDO ======
-		for sheet_name, rows in extracted.items():
-			if not rows:
-				LOG.info(f"Sheet {sheet_name} está vacío, saltando")
-				continue
+        for sheet_name, rows in extracted.items():
+            if not rows:
+                LOG.info(f"Sheet {sheet_name} está vacío, saltando")
+                continue
 
-			# Obtener headers (primera fila)
-			headers = list(rows[0].keys()) if rows else []
-			
-			if len(headers) < 2:
-				LOG.warning(f"Sheet {sheet_name} tiene menos de 2 columnas, saltando")
-				continue
+            headers = list(rows[0].keys()) if rows else []
+            
+            if len(headers) < 2:
+                LOG.warning(f"Sheet {sheet_name} tiene menos de 2 columnas, saltando")
+                continue
 
-			# ====== DETECTAR TIPO DE DATOS ======
-			header_col_a = normalize_text(headers[0])
-			header_col_b = normalize_text(headers[1])
+            # Detectar tipo de datos
+            header_col_a = normalize_text(headers[0])
+            header_col_b = normalize_text(headers[1])
 
-			LOG.info(f"Detectados headers: Col A='{header_col_a}', Col B='{header_col_b}'")
+            LOG.info(f"Detectados headers: Col A='{header_col_a}', Col B='{header_col_b}'")
 
-			# Determine target sheet and column mapping
-			target_sheet = None
-			is_pdv = False
-			is_zona = False
-			is_clasificacion = False
+            target_sheet = None
+            is_pdv = False
+            is_zona = False
+            is_clasificacion = False
+            update_columns = ""  # Para saber qué columnas vamos a limpiar/actualizar
 
-			# Condición 1: PDV (Puntos de Venta)
-			if "PDV" in header_col_a and "NIVEL" in header_col_b and "SERVICIO" in header_col_b:
-				target_sheet = "Puntos_Venta"
-				is_pdv = True
-				LOG.info(f"✓ Detectado: PUNTOS DE VENTA (PDV) → Hoja: {target_sheet}")
+            if "PDV" in header_col_a and "NIVEL" in header_col_b and "SERVICIO" in header_col_b:
+                target_sheet = "Puntos_Venta"
+                is_pdv = True
+                update_columns = "A-C"  # Columnas A, B, C (Fecha, PDV, Nivel)
+                LOG.info(f"✓ Detectado: PUNTOS DE VENTA (PDV) → Hoja: {target_sheet}")
 
-			# Condición 2: ZONA
-			elif "ZONA" in header_col_a and "NIVEL" in header_col_b and "SERVICIO" in header_col_b:
-				target_sheet = "Zonas"
-				is_zona = True
-				LOG.info(f"✓ Detectado: ZONAS → Hoja: {target_sheet}")
+            elif "ZONA" in header_col_a and "NIVEL" in header_col_b and "SERVICIO" in header_col_b:
+                target_sheet = "Zonas"
+                is_zona = True
+                update_columns = "A-C"  # Columnas A, B, C (Fecha, Zona, Nivel)
+                LOG.info(f"✓ Detectado: ZONAS → Hoja: {target_sheet}")
 
-			
-			# Condición 3: CLASIFICACION (Buscamos 'CLASIF' en cualquier columna inicial)
-			elif ("CLASIF" in header_col_a or "CLASIF" in header_col_b) and ("SERVICIO" in header_col_a or "SERVICIO" in header_col_b or "SERVICIO" in normalize_text(headers[3])):
-				target_sheet = "Clasificacion"
-				is_clasificacion = True
-				LOG.info(f"✓ Detectado: CLASIFICACIÓN → Hoja: {target_sheet}")
+            elif ("CLASIF" in header_col_a or "CLASIF" in header_col_b) and ("SERVICIO" in header_col_a or "SERVICIO" in header_col_b or "SERVICIO" in normalize_text(headers[3])):
+                target_sheet = "Clasificacion"
+                is_clasificacion = True
+                update_columns = "A-D"  # Columnas A, B, C, D (Zona, Letra, Nombre, Nivel)
+                LOG.info(f"✓ Detectado: CLASIFICACIÓN → Hoja: {target_sheet}")
 
-			else:
-				LOG.warning(f"No se pudo identificar el tipo de datos. Headers: {headers}")
-				continue
+            else:
+                LOG.warning(f"No se pudo identificar el tipo de datos. Headers: {headers}")
+                continue
 
-			# ====== PROCESAR Y SUBIR A HOJA DESTINO ======
-			if target_sheet:
-				try:
-					# Obtener o crear worksheet
-					try:
-						ws = sh.worksheet(target_sheet)
-						LOG.info(f"Worksheet '{target_sheet}' encontrada")
-					except Exception:
-						ws = sh.add_worksheet(title=target_sheet, rows=max(100, len(rows) + 5), cols=20)
-						LOG.info(f"Worksheet '{target_sheet}' creada")
+            if target_sheet:
+                try:
+                    # Obtener o crear worksheet
+                    try:
+                        ws = sh.worksheet(target_sheet)
+                        LOG.info(f"Worksheet '{target_sheet}' encontrada")
+                    except Exception:
+                        ws = sh.add_worksheet(title=target_sheet, rows=max(100, len(rows) + 5), cols=20)
+                        LOG.info(f"Worksheet '{target_sheet}' creada")
 
-					# Limpiar filas previas si es necesario
-					if clear:
-						try:
-							rc = getattr(ws, 'row_count', None)
-							if rc and isinstance(rc, int) and rc > 1:
-								ws.batch_clear([f"2:{rc}"])
-							else:
-								ws.batch_clear(["2:1000"])
-							LOG.info(f"Worksheet '{target_sheet}' limpiada")
-						except Exception as e:
-							LOG.warning(f"Error al limpiar worksheet: {e}")
+                    # ====== LIMPIAR SOLO LAS COLUMNAS QUE VAMOS A USAR ======
+                    if clear:
+                        try:
+                            all_values = ws.get_all_values()
+                            if len(all_values) > 1:
+                                last_row = len(all_values)
+                                
+                                if update_columns == "A-C":
+                                    clear_range = f"A2:C{last_row}"  # Limpia solo columnas A, B, C
+                                elif update_columns == "A-D":
+                                    clear_range = f"A2:D{last_row}"  # Limpia solo columnas A, B, C, D
+                                else:
+                                    clear_range = f"A2:C{last_row}"  # Por defecto
+                                
+                                ws.batch_clear([clear_range])
+                                LOG.info(f"✅ Columnas {update_columns} limpiadas desde fila 2 hasta {last_row} en '{target_sheet}'")
+                            else:
+                                LOG.info(f"No hay datos previos que limpiar en '{target_sheet}'")
+                        except Exception as e:
+                            LOG.warning(f"Error al limpiar columnas en '{target_sheet}': {e}")
 
-					# ====== PREPARAR DATOS PARA SUBIDA ======
-					date_str = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-					table_data = []
+                    # Preparar datos
+                    date_str = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+                    table_data = []
 
-					if is_pdv:
-						# Para PDV: Fecha | PDV | Nivel de Servicio
-						# Los datos van en columnas B y C
-						for r in rows:
-							valor_col_a = r.get(headers[0], '')  # PDV
-							valor_col_b = r.get(headers[1], '')  # Nivel de Servicio
-							row = [date_str, valor_col_a, valor_col_b]
-							table_data.append(row)
-						
-						range_update = "A2"  # Desde A2 (fila 2)
-						LOG.info(f"Subiendo {len(table_data)} filas a '{target_sheet}' (columnas B y C)")
+                    if is_pdv or is_zona:
+                        for r in rows:
+                            valor_col_a = r.get(headers[0], '')
+                            valor_col_b = r.get(headers[1], '')
+                            row = [date_str, valor_col_a, valor_col_b]
+                            table_data.append(row)
+                        range_update = "A2"
 
-					elif is_zona:
-						# Para ZONA: Fecha | Zona | Nivel de Servicio
-						# Los datos van en columnas B y C
-						for r in rows:
-							valor_col_a = r.get(headers[0], '')  # Zona
-							valor_col_b = r.get(headers[1], '')  # Nivel de Servicio
-							row = [date_str, valor_col_a, valor_col_b]
-							table_data.append(row)
-						
-						range_update = "A2"  # Desde A2 (fila 2)
-						LOG.info(f"Subiendo {len(table_data)} filas a '{target_sheet}' (columnas B y C)")
+                    elif is_clasificacion:
+                        for r in rows:
+                            row = [
+                                str(r.get(headers[0], '')),
+                                str(r.get(headers[1], '')),
+                                str(r.get(headers[2], '')),
+                                str(r.get(headers[3], ''))
+                            ]
+                            table_data.append(row)
+                        range_update = "A2"
 
-					elif is_clasificacion:
-						LOG.info("Procesando datos para Clasificacion...")
-						table_data = []
+                    # Ejecutar subida
+                    if table_data:
+                        try:
+                            ws.update(range_update, table_data)
+                            LOG.info(f'✓ Sheet "{target_sheet}" actualizada con {len(table_data)} filas (solo columnas {update_columns})')
+                            LOG.info(f'✅ Columnas {chr(ord(update_columns.split("-")[1]) + 1)} en adelante permanecen intactas')
+                        except Exception as e:
+                            LOG.error(f"Error al actualizar sheet '{target_sheet}': {e}", exc_info=True)
+                            return False
+                    else:
+                        LOG.warning(f"No hay datos para subir a '{target_sheet}'")
 
-						# Validar que existan suficientes columnas (mínimo 4 para Clasificación)
-						num_cols = len(headers)
-						
-						for r in rows:
-							# Tomamos las primeras 4 columnas por índice para no fallar por nombres
-							row = [
-								str(r.get(headers[0], '')),  # Zona
-								str(r.get(headers[1], '')),  # Letra
-								str(r.get(headers[2], '')),  # Nombre
-								str(r.get(headers[3], ''))   # Nivel de Servicio (Aquí llegará el número real)
-							]
-							table_data.append(row)
+                except Exception as e:
+                    LOG.error(f"Error procesando hoja {target_sheet}: {e}", exc_info=True)
+                    continue
 
-						range_update = "A2"
-						LOG.info(f"Subiendo {len(table_data)} filas a la hoja '{target_sheet}'")
+        return True
 
-					# ====== EJECUTAR SUBIDA ======
-					if table_data:
-						try:
-							ws.update(range_update, table_data)
-							LOG.info(f'✓ Sheet "{target_sheet}" actualizada con {len(table_data)} filas')
-						except Exception as e:
-							LOG.error(f"Error al actualizar sheet: {e}", exc_info=True)
-							return False
-					else:
-						LOG.warning(f"No hay datos para subir a '{target_sheet}'")
-
-				except Exception as e:
-					LOG.error(f"Error procesando hoja {target_sheet}: {e}", exc_info=True)
-					continue
-
-		return True
-
-	except Exception as e:
-		LOG.error(f"Error en detect_data_type_and_upload: {e}", exc_info=True)
-		return False
+    except Exception as e:
+        LOG.error(f"Error en detect_data_type_and_upload: {e}", exc_info=True)
+        return False
 
 
-def upload_nv_estado(extracted: dict, spreadsheet_id: str, credentials_json_path: str, clear: bool = True) -> bool:
-	"""
-	Especial para Grid 4: Lee Zona (Col A), NombreEstadoProducto (Col B), Nivel de Servicio (Col D)
-	y sube a la hoja 'NV_estado'
-	"""
-	try:
-		try:
-			import gspread
-			from google.oauth2 import service_account
-		except Exception:
-			LOG.error("Falta gspread o google-auth")
-			return False
+def upload_estado_producto(extracted: dict, spreadsheet_id: str, credentials_json_path: str, clear: bool = True) -> bool:
+    """
+    Especial para Grid 4: Lee Zona (Col A), NombreEstadoProducto (Col B), Nivel de Servicio (Col C)
+    y sube a la hoja 'Estado_Producto' LIMPIANDO SOLO LAS COLUMNAS QUE ESCRIBE (A, B, C, D)
+    """
+    try:
+        try:
+            import gspread
+            from google.oauth2 import service_account
+        except Exception:
+            LOG.error("Falta gspread o google-auth")
+            return False
 
-		scopes = [
-			'https://www.googleapis.com/auth/spreadsheets',
-			'https://www.googleapis.com/auth/drive'
-		]
-		creds = service_account.Credentials.from_service_account_file(credentials_json_path, scopes=scopes)
-		client = gspread.authorize(creds)
-		sh = client.open_by_key(spreadsheet_id)
+        scopes = [
+            'https://www.googleapis.com/auth/spreadsheets',
+            'https://www.googleapis.com/auth/drive'
+        ]
+        creds = service_account.Credentials.from_service_account_file(credentials_json_path, scopes=scopes)
+        client = gspread.authorize(creds)
+        sh = client.open_by_key(spreadsheet_id)
 
-		# ====== PROCESAMIENTO PARA GRID 4 ======
-		for sheet_name, rows in extracted.items():
-			if not rows:
-				LOG.info(f"Sheet {sheet_name} está vacío, saltando")
-				continue
+        for sheet_name, rows in extracted.items():
+            if not rows:
+                LOG.info(f"Sheet {sheet_name} está vacío, saltando")
+                continue
 
-			# Obtener headers (primera fila)
-			headers = list(rows[0].keys()) if rows else []
-			
-			if len(headers) < 4:
-				LOG.warning(f"Sheet {sheet_name} tiene menos de 4 columnas, necesita al menos A, B, C, D")
-				continue
+            headers = list(rows[0].keys()) if rows else []
+            
+            if len(headers) < 3:
+                LOG.warning(f"Sheet {sheet_name} tiene menos de 3 columnas, necesita al menos A, B, C")
+                continue
 
-			LOG.info(f"Grid 4: Procesando sheet {sheet_name} con headers: {headers}")
+            LOG.info(f"Grid 4: Procesando sheet {sheet_name} con headers: {headers}")
 
-			target_sheet = "NV_estado"
-			
-			try:
-				# Obtener o crear worksheet
-				try:
-					ws = sh.worksheet(target_sheet)
-					LOG.info(f"Worksheet '{target_sheet}' encontrada")
-				except Exception:
-					ws = sh.add_worksheet(title=target_sheet, rows=max(100, len(rows) + 5), cols=20)
-					LOG.info(f"Worksheet '{target_sheet}' creada")
+            target_sheet = "Estado_Producto"
+            
+            try:
+                try:
+                    ws = sh.worksheet(target_sheet)
+                    LOG.info(f"Worksheet '{target_sheet}' encontrada")
+                except Exception:
+                    ws = sh.add_worksheet(title=target_sheet, rows=max(100, len(rows) + 5), cols=20)
+                    LOG.info(f"Worksheet '{target_sheet}' creada")
 
-				# Limpiar filas previas si es necesario
-				if clear:
-					try:
-						rc = getattr(ws, 'row_count', None)
-						if rc and isinstance(rc, int) and rc > 1:
-							ws.batch_clear([f"2:{rc}"])
-						else:
-							ws.batch_clear(["2:1000"])
-						LOG.info(f"Worksheet '{target_sheet}' limpiada")
-					except Exception as e:
-						LOG.warning(f"Error al limpiar worksheet: {e}")
+                # ====== LIMPIAR SOLO COLUMNAS A-D ======
+                if clear:
+                    try:
+                        all_values = ws.get_all_values()
+                        if len(all_values) > 1:
+                            last_row = len(all_values)
+                            clear_range = f"A2:D{last_row}"  # SOLO columnas A, B, C, D
+                            ws.batch_clear([clear_range])
+                            LOG.info(f"✅ Columnas A-D limpiadas desde fila 2 hasta {last_row} en '{target_sheet}'")
+                        else:
+                            LOG.info(f"No hay datos previos que limpiar en '{target_sheet}'")
+                    except Exception as e:
+                        LOG.warning(f"Error al limpiar columnas en '{target_sheet}': {e}")
 
-				# ====== PREPARAR DATOS PARA SUBIDA ======
-				# Leer: Zona (Col A), NombreEstadoProducto (Col B), Nivel de Servicio (Col D)
-				date_str = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-				table_data = []
+                # Preparar datos
+                date_str = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+                table_data = []
 
-				for r in rows:
-					zona = r.get(headers[0], '')           # Columna A: Zona
-					nombre_estado = r.get(headers[1], '')  # Columna B: NombreEstadoProducto
-					nivel_servicio = r.get(headers[3], '') # Columna D: Nivel de Servicio
-					
-					row = [date_str, zona, nombre_estado, nivel_servicio]
-					table_data.append(row)
+                for r in rows:
+                    zona = r.get(headers[0], '')
+                    nombre_estado = r.get(headers[1], '')
+                    nivel_servicio = r.get(headers[2], '')
+                    
+                    row = [date_str, zona, nombre_estado, nivel_servicio]
+                    table_data.append(row)
 
-				# ====== EJECUTAR SUBIDA ======
-				if table_data:
-					try:
-						ws.update("A2", table_data)
-						LOG.info(f'✓ Sheet "NV_estado" actualizada con {len(table_data)} filas')
-						return True
-					except Exception as e:
-						LOG.error(f"Error al actualizar sheet: {e}", exc_info=True)
-						return False
-				else:
-					LOG.warning(f"No hay datos para subir a '{target_sheet}'")
-					return False
+                # Ejecutar subida SOLO en columnas A-D
+                if table_data:
+                    try:
+                        ws.update("A2", table_data)
+                        LOG.info(f'✓ Sheet "{target_sheet}" actualizada con {len(table_data)} filas (solo columnas A-D)')
+                        LOG.info(f'✅ Columnas E en adelante permanecen intactas en "{target_sheet}"')
+                        return True
+                    except Exception as e:
+                        LOG.error(f"Error al actualizar sheet '{target_sheet}': {e}", exc_info=True)
+                        return False
+                else:
+                    LOG.warning(f"No hay datos para subir a '{target_sheet}'")
+                    return False
 
-			except Exception as e:
-				LOG.error(f"Error procesando hoja {target_sheet}: {e}", exc_info=True)
-				return False
+            except Exception as e:
+                LOG.error(f"Error procesando hoja {target_sheet}: {e}", exc_info=True)
+                return False
 
-	except Exception as e:
-		LOG.error(f"Error en upload_nv_estado: {e}", exc_info=True)
-		return False
-
+    except Exception as e:
+        LOG.error(f"Error en upload_estado_producto: {e}", exc_info=True)
+        return False
 
 def mes_numero_a_abreviatura(mes_numero: int) -> str:
 	"""Convierte número de mes (1-12) a abreviatura (Ene, Feb, Mar...)"""
@@ -1170,13 +1153,14 @@ def run_once(driver: webdriver.Chrome = None) -> None:
 			except Exception:
 				LOG.debug("Error en Grid 0", exc_info=True)
 
-			# ===== GRID 4 (NUEVO) - NV_ESTADO =====
+			
+			# ===== GRID 4 (NUEVO) - ESTADO_PRODUCTO =====
 			try:
 				grid_sel_4 = "#grid > div:nth-child(14)"
 				WebDriverWait(driver, 30).until(EC.visibility_of_element_located((By.CSS_SELECTOR, grid_sel_4)))
 				
 				if not grid_listo(driver, grid_sel_4, timeout=20):
-					LOG.info("Grid 4 (NV_Estado) no está listo, saltando")
+					LOG.info("Grid 4 (Estado_Producto) no está listo, saltando")
 				else:
 					try:
 						bring_browser_to_front(driver)
@@ -1199,7 +1183,7 @@ def run_once(driver: webdriver.Chrome = None) -> None:
 										time.sleep(0.6)
 										if click_button_by_selector(driver, '#export', timeout=5.0):
 											time.sleep(0.6)
-											# ====== NUEVO: Click en XPath para Grid 4 ======
+											# ====== Click en XPath para Grid 4 ======
 											if click_button_by_xpath(driver, '//*[@id="data-export-settings-dialog"]/div[3]/button[2]', timeout=5.0):
 												LOG.info("Grid 4: XPath clickeado exitosamente")
 												time.sleep(1)
@@ -1214,7 +1198,7 @@ def run_once(driver: webdriver.Chrome = None) -> None:
 													downloads_dir_4 = os.path.join(Path.home(), 'Downloads')
 													found_4 = find_latest_downloaded_file(downloads_dir_4, pattern='*.xlsx', since_ts=download_start_ts_4, timeout=30.0)
 													if found_4:
-														LOG.info('Archivo Grid 4 (NV_Estado): %s', found_4)
+														LOG.info('Archivo Grid 4 (Estado_Producto): %s', found_4)
 														extracted_4 = extract_excel_contents(found_4)
 														if extracted_4 is not None:
 															out_file_4 = Path('exported_data_grid4.json')
@@ -1224,14 +1208,14 @@ def run_once(driver: webdriver.Chrome = None) -> None:
 															except Exception:
 																pass
 															try:
-																if upload_nv_estado(extracted_4, sid, sa, clear=True):
-																	LOG.info("✓ Grid 4: Datos subidos correctamente a 'NV_Estado' en Google Sheets")
-																	# Aquí continúa con los otros grids
+																# Usar la nueva función upload_estado_producto en lugar de upload_nv_estado
+																if upload_estado_producto(extracted_4, sid, sa, clear=True):
+																	LOG.info("✓ Grid 4: Datos subidos correctamente a 'Estado_Producto' en Google Sheets")
 																	LOG.info("Grid 4 completado. Continuando con otros procesos...")
 																else:
-																	LOG.error("✗ Grid 4: Error al subir datos a 'NV_Estado'")
+																	LOG.error("✗ Grid 4: Error al subir datos a 'Estado_Producto'")
 															except Exception as e:
-																LOG.error(f"Error en upload_nv_estado Grid 4: {e}", exc_info=True)
+																LOG.error(f"Error en upload_estado_producto Grid 4: {e}", exc_info=True)
 															try:
 																p_4 = Path(found_4)
 																if p_4.exists():
@@ -1257,7 +1241,6 @@ def run_once(driver: webdriver.Chrome = None) -> None:
 							pass
 			except Exception:
 				LOG.debug("Error en Grid 4", exc_info=True)
-
 			# ===== GRID 1 =====
 			try:
 				grid_sel = "#grid > div:nth-child(9)"
