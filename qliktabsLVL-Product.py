@@ -875,7 +875,7 @@ def upload_estado_producto(extracted: dict, spreadsheet_id: str, credentials_jso
                         LOG.warning(f"Error al limpiar columnas en '{target_sheet}': {e}")
 
                 # Preparar datos
-                date_str = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+                
                 table_data = []
 
                 for r in rows:
@@ -1022,7 +1022,7 @@ def run_once(driver: webdriver.Chrome = None) -> None:
 
 		# GOOGLE SHEETS ORIGINALES
 		default_sa = r'C:\Users\cmarroquin\Music\qliktabs-LVL product\prueba-de-gmail-486215-55c5b9a4012b.json'
-		default_sid = '1eP5OKl1hGAsOATYZ14cayPck6z5sd3LqcVShAlLn4ZA'
+		default_sid = '1w64tHFJuoLqsoxTwotfCJ-fOVEJOO3oKZiIjaIflBNU'
 		sa = _os.environ.get('GOOGLE_SERVICE_ACCOUNT_JSON', default_sa)
 		sid = _os.environ.get('GOOGLE_SHEET_ID', default_sid)
 		target_hoja1 = _os.environ.get('GOOGLE_SHEET_TAB', 'Hoja ')
