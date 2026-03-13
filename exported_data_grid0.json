@@ -1,0 +1,394 @@
+{
+  "Sheet1": [
+    {
+      "Zona": "ZONA VILLAVICENCIO",
+      "LetraClasificacionProducto": "E",
+      "NombreClasificacionProducto": "Excelente Rotacion",
+      "Nivel de Servicio": "0.4542430033164561"
+    },
+    {
+      "Zona": "ZONA VILLAVICENCIO",
+      "LetraClasificacionProducto": "A",
+      "NombreClasificacionProducto": "Alta Rotacion",
+      "Nivel de Servicio": "0.2533019873911111"
+    },
+    {
+      "Zona": "ZONA VILLAVICENCIO",
+      "LetraClasificacionProducto": "B",
+      "NombreClasificacionProducto": "Buena Rotacion",
+      "Nivel de Servicio": "0.1323112055922603"
+    },
+    {
+      "Zona": "ZONA VILLAVICENCIO",
+      "LetraClasificacionProducto": "C",
+      "NombreClasificacionProducto": "Baja Rotacion",
+      "Nivel de Servicio": "0.08850948339836556"
+    },
+    {
+      "Zona": "ZONA VILLAVICENCIO",
+      "LetraClasificacionProducto": "L",
+      "NombreClasificacionProducto": "Lenta Rotacion",
+      "Nivel de Servicio": "0.05052136114991815"
+    },
+    {
+      "Zona": "ZONA VALLEDUPAR",
+      "LetraClasificacionProducto": "E",
+      "NombreClasificacionProducto": "Excelente Rotacion",
+      "Nivel de Servicio": "0.5814058515342051"
+    },
+    {
+      "Zona": "ZONA VALLEDUPAR",
+      "LetraClasificacionProducto": "A",
+      "NombreClasificacionProducto": "Alta Rotacion",
+      "Nivel de Servicio": "0.2765797378240684"
+    },
+    {
+      "Zona": "ZONA VALLEDUPAR",
+      "LetraClasificacionProducto": "B",
+      "NombreClasificacionProducto": "Buena Rotacion",
+      "Nivel de Servicio": "0.1468806431852635"
+    },
+    {
+      "Zona": "ZONA VALLEDUPAR",
+      "LetraClasificacionProducto": "C",
+      "NombreClasificacionProducto": "Baja Rotacion",
+      "Nivel de Servicio": "0.1016571979779004"
+    },
+    {
+      "Zona": "ZONA VALLEDUPAR",
+      "LetraClasificacionProducto": "L",
+      "NombreClasificacionProducto": "Lenta Rotacion",
+      "Nivel de Servicio": "0.05021213236410656"
+    },
+    {
+      "Zona": "ZONA TOLIMA GRANDE",
+      "LetraClasificacionProducto": "E",
+      "NombreClasificacionProducto": "Excelente Rotacion",
+      "Nivel de Servicio": "0.5125171809452048"
+    },
+    {
+      "Zona": "ZONA TOLIMA GRANDE",
+      "LetraClasificacionProducto": "A",
+      "NombreClasificacionProducto": "Alta Rotacion",
+      "Nivel de Servicio": "0.2834904726057471"
+    },
+    {
+      "Zona": "ZONA TOLIMA GRANDE",
+      "LetraClasificacionProducto": "L",
+      "NombreClasificacionProducto": "Lenta Rotacion",
+      "Nivel de Servicio": "0.1489326938714003"
+    },
+    {
+      "Zona": "ZONA TOLIMA GRANDE",
+      "LetraClasificacionProducto": "B",
+      "NombreClasificacionProducto": "Buena Rotacion",
+      "Nivel de Servicio": "0.1470023621564923"
+    },
+    {
+      "Zona": "ZONA TOLIMA GRANDE",
+      "LetraClasificacionProducto": "C",
+      "NombreClasificacionProducto": "Baja Rotacion",
+      "Nivel de Servicio": "0.08333074296435485"
+    },
+    {
+      "Zona": "ZONA ORIENTE",
+      "LetraClasificacionProducto": "E",
+      "NombreClasificacionProducto": "Excelente Rotacion",
+      "Nivel de Servicio": "0.525271292520282"
+    },
+    {
+      "Zona": "ZONA ORIENTE",
+      "LetraClasificacionProducto": "A",
+      "NombreClasificacionProducto": "Alta Rotacion",
+      "Nivel de Servicio": "0.2537727818656644"
+    },
+    {
+      "Zona": "ZONA ORIENTE",
+      "LetraClasificacionProducto": "B",
+      "NombreClasificacionProducto": "Buena Rotacion",
+      "Nivel de Servicio": "0.1251805225055048"
+    },
+    {
+      "Zona": "ZONA ORIENTE",
+      "LetraClasificacionProducto": "C",
+      "NombreClasificacionProducto": "Baja Rotacion",
+      "Nivel de Servicio": "0.04694252267615913"
+    },
+    {
+      "Zona": "ZONA ORIENTE",
+      "LetraClasificacionProducto": "L",
+      "NombreClasificacionProducto": "Lenta Rotacion",
+      "Nivel de Servicio": "0.04011028581857923"
+    },
+    {
+      "Zona": "ZONA MONTERIA",
+      "LetraClasificacionProducto": "E",
+      "NombreClasificacionProducto": "Excelente Rotacion",
+      "Nivel de Servicio": "0.5619450324999488"
+    },
+    {
+      "Zona": "ZONA MONTERIA",
+      "LetraClasificacionProducto": "A",
+      "NombreClasificacionProducto": "Alta Rotacion",
+      "Nivel de Servicio": "0.2474172628557373"
+    },
+    {
+      "Zona": "ZONA MONTERIA",
+      "LetraClasificacionProducto": "B",
+      "NombreClasificacionProducto": "Buena Rotacion",
+      "Nivel de Servicio": "0.122874226899268"
+    },
+    {
+      "Zona": "ZONA MONTERIA",
+      "LetraClasificacionProducto": "C",
+      "NombreClasificacionProducto": "Baja Rotacion",
+      "Nivel de Servicio": "0.111739835044767"
+    },
+    {
+      "Zona": "ZONA MONTERIA",
+      "LetraClasificacionProducto": "L",
+      "NombreClasificacionProducto": "Lenta Rotacion",
+      "Nivel de Servicio": "0.08743519556330077"
+    },
+    {
+      "Zona": "ZONA EJE CAFETERO",
+      "LetraClasificacionProducto": "E",
+      "NombreClasificacionProducto": "Excelente Rotacion",
+      "Nivel de Servicio": "0.5215427161905156"
+    },
+    {
+      "Zona": "ZONA EJE CAFETERO",
+      "LetraClasificacionProducto": "A",
+      "NombreClasificacionProducto": "Alta Rotacion",
+      "Nivel de Servicio": "0.2940012683110342"
+    },
+    {
+      "Zona": "ZONA EJE CAFETERO",
+      "LetraClasificacionProducto": "B",
+      "NombreClasificacionProducto": "Buena Rotacion",
+      "Nivel de Servicio": "0.147543907598646"
+    },
+    {
+      "Zona": "ZONA EJE CAFETERO",
+      "LetraClasificacionProducto": "C",
+      "NombreClasificacionProducto": "Baja Rotacion",
+      "Nivel de Servicio": "0.1006229310314926"
+    },
+    {
+      "Zona": "ZONA EJE CAFETERO",
+      "LetraClasificacionProducto": "L",
+      "NombreClasificacionProducto": "Lenta Rotacion",
+      "Nivel de Servicio": "0.07698646736765526"
+    },
+    {
+      "Zona": "ZONA CARTAGENA",
+      "LetraClasificacionProducto": "E",
+      "NombreClasificacionProducto": "Excelente Rotacion",
+      "Nivel de Servicio": "0.5106522497616659"
+    },
+    {
+      "Zona": "ZONA CARTAGENA",
+      "LetraClasificacionProducto": "A",
+      "NombreClasificacionProducto": "Alta Rotacion",
+      "Nivel de Servicio": "0.2416893719891021"
+    },
+    {
+      "Zona": "ZONA CARTAGENA",
+      "LetraClasificacionProducto": "B",
+      "NombreClasificacionProducto": "Buena Rotacion",
+      "Nivel de Servicio": "0.1204645918108139"
+    },
+    {
+      "Zona": "ZONA CARTAGENA",
+      "LetraClasificacionProducto": "C",
+      "NombreClasificacionProducto": "Baja Rotacion",
+      "Nivel de Servicio": "0.08439650869869493"
+    },
+    {
+      "Zona": "ZONA CARTAGENA",
+      "LetraClasificacionProducto": "L",
+      "NombreClasificacionProducto": "Lenta Rotacion",
+      "Nivel de Servicio": "0.05365939446015289"
+    },
+    {
+      "Zona": "ZONA CALI SUR",
+      "LetraClasificacionProducto": "E",
+      "NombreClasificacionProducto": "Excelente Rotacion",
+      "Nivel de Servicio": "0.4821432484758869"
+    },
+    {
+      "Zona": "ZONA CALI SUR",
+      "LetraClasificacionProducto": "A",
+      "NombreClasificacionProducto": "Alta Rotacion",
+      "Nivel de Servicio": "0.3036367225801426"
+    },
+    {
+      "Zona": "ZONA CALI SUR",
+      "LetraClasificacionProducto": "B",
+      "NombreClasificacionProducto": "Buena Rotacion",
+      "Nivel de Servicio": "0.163937959367518"
+    },
+    {
+      "Zona": "ZONA CALI SUR",
+      "LetraClasificacionProducto": "C",
+      "NombreClasificacionProducto": "Baja Rotacion",
+      "Nivel de Servicio": "0.1054518632492644"
+    },
+    {
+      "Zona": "ZONA CALI SUR",
+      "LetraClasificacionProducto": "L",
+      "NombreClasificacionProducto": "Lenta Rotacion",
+      "Nivel de Servicio": "0.08138975361628208"
+    },
+    {
+      "Zona": "ZONA CALI NORTE",
+      "LetraClasificacionProducto": "E",
+      "NombreClasificacionProducto": "Excelente Rotacion",
+      "Nivel de Servicio": "0.5369996234204463"
+    },
+    {
+      "Zona": "ZONA CALI NORTE",
+      "LetraClasificacionProducto": "A",
+      "NombreClasificacionProducto": "Alta Rotacion",
+      "Nivel de Servicio": "0.2945435864647991"
+    },
+    {
+      "Zona": "ZONA CALI NORTE",
+      "LetraClasificacionProducto": "B",
+      "NombreClasificacionProducto": "Buena Rotacion",
+      "Nivel de Servicio": "0.1618273407239363"
+    },
+    {
+      "Zona": "ZONA CALI NORTE",
+      "LetraClasificacionProducto": "C",
+      "NombreClasificacionProducto": "Baja Rotacion",
+      "Nivel de Servicio": "0.1006499269655211"
+    },
+    {
+      "Zona": "ZONA CALI NORTE",
+      "LetraClasificacionProducto": "L",
+      "NombreClasificacionProducto": "Lenta Rotacion",
+      "Nivel de Servicio": "0.06718586987527762"
+    },
+    {
+      "Zona": "ZONA BOGOTA SUR",
+      "LetraClasificacionProducto": "E",
+      "NombreClasificacionProducto": "Excelente Rotacion",
+      "Nivel de Servicio": "0.4345414047032433"
+    },
+    {
+      "Zona": "ZONA BOGOTA SUR",
+      "LetraClasificacionProducto": "A",
+      "NombreClasificacionProducto": "Alta Rotacion",
+      "Nivel de Servicio": "0.258065307037273"
+    },
+    {
+      "Zona": "ZONA BOGOTA SUR",
+      "LetraClasificacionProducto": "B",
+      "NombreClasificacionProducto": "Buena Rotacion",
+      "Nivel de Servicio": "0.1210516275062547"
+    },
+    {
+      "Zona": "ZONA BOGOTA SUR",
+      "LetraClasificacionProducto": "L",
+      "NombreClasificacionProducto": "Lenta Rotacion",
+      "Nivel de Servicio": "0.08586798558639647"
+    },
+    {
+      "Zona": "ZONA BOGOTA SUR",
+      "LetraClasificacionProducto": "C",
+      "NombreClasificacionProducto": "Baja Rotacion",
+      "Nivel de Servicio": "0.07849917893713006"
+    },
+    {
+      "Zona": "ZONA BOGOTA NORTE",
+      "LetraClasificacionProducto": "E",
+      "NombreClasificacionProducto": "Excelente Rotacion",
+      "Nivel de Servicio": "0.4159211672411869"
+    },
+    {
+      "Zona": "ZONA BOGOTA NORTE",
+      "LetraClasificacionProducto": "A",
+      "NombreClasificacionProducto": "Alta Rotacion",
+      "Nivel de Servicio": "0.2408840599385929"
+    },
+    {
+      "Zona": "ZONA BOGOTA NORTE",
+      "LetraClasificacionProducto": "B",
+      "NombreClasificacionProducto": "Buena Rotacion",
+      "Nivel de Servicio": "0.1097758280594248"
+    },
+    {
+      "Zona": "ZONA BOGOTA NORTE",
+      "LetraClasificacionProducto": "C",
+      "NombreClasificacionProducto": "Baja Rotacion",
+      "Nivel de Servicio": "0.05667447246547553"
+    },
+    {
+      "Zona": "ZONA BOGOTA NORTE",
+      "LetraClasificacionProducto": "L",
+      "NombreClasificacionProducto": "Lenta Rotacion",
+      "Nivel de Servicio": "0.04348952214937339"
+    },
+    {
+      "Zona": "ZONA BARRANQUILLA",
+      "LetraClasificacionProducto": "E",
+      "NombreClasificacionProducto": "Excelente Rotacion",
+      "Nivel de Servicio": "0.4878720326683241"
+    },
+    {
+      "Zona": "ZONA BARRANQUILLA",
+      "LetraClasificacionProducto": "A",
+      "NombreClasificacionProducto": "Alta Rotacion",
+      "Nivel de Servicio": "0.2736875274161358"
+    },
+    {
+      "Zona": "ZONA BARRANQUILLA",
+      "LetraClasificacionProducto": "B",
+      "NombreClasificacionProducto": "Buena Rotacion",
+      "Nivel de Servicio": "0.1226423210997338"
+    },
+    {
+      "Zona": "ZONA BARRANQUILLA",
+      "LetraClasificacionProducto": "C",
+      "NombreClasificacionProducto": "Baja Rotacion",
+      "Nivel de Servicio": "0.09987668407075723"
+    },
+    {
+      "Zona": "ZONA BARRANQUILLA",
+      "LetraClasificacionProducto": "L",
+      "NombreClasificacionProducto": "Lenta Rotacion",
+      "Nivel de Servicio": "0.09244821527683057"
+    },
+    {
+      "Zona": "ZONA ANTIOQUIA",
+      "LetraClasificacionProducto": "E",
+      "NombreClasificacionProducto": "Excelente Rotacion",
+      "Nivel de Servicio": "0.461460682572658"
+    },
+    {
+      "Zona": "ZONA ANTIOQUIA",
+      "LetraClasificacionProducto": "A",
+      "NombreClasificacionProducto": "Alta Rotacion",
+      "Nivel de Servicio": "0.2553234495882628"
+    },
+    {
+      "Zona": "ZONA ANTIOQUIA",
+      "LetraClasificacionProducto": "B",
+      "NombreClasificacionProducto": "Buena Rotacion",
+      "Nivel de Servicio": "0.1207412777620826"
+    },
+    {
+      "Zona": "ZONA ANTIOQUIA",
+      "LetraClasificacionProducto": "C",
+      "NombreClasificacionProducto": "Baja Rotacion",
+      "Nivel de Servicio": "0.08462106313636633"
+    },
+    {
+      "Zona": "ZONA ANTIOQUIA",
+      "LetraClasificacionProducto": "L",
+      "NombreClasificacionProducto": "Lenta Rotacion",
+      "Nivel de Servicio": "0.0541431226625038"
+    }
+  ]
+}

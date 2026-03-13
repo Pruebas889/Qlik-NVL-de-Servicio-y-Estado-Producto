@@ -1,0 +1,849 @@
+{
+  "Sheet1": [
+    {
+      "Zona": "ZONA EJE CAFETERO",
+      "NombreEstadoProducto": "Nivelación De Inventarios",
+      "Nivel de Servicio": "0.8007764103229764"
+    },
+    {
+      "Zona": "ZONA MONTERIA",
+      "NombreEstadoProducto": "Nivelación De Inventarios",
+      "Nivel de Servicio": "0.7675160233268169"
+    },
+    {
+      "Zona": "ZONA TOLIMA GRANDE",
+      "NombreEstadoProducto": "Nivelación De Inventarios",
+      "Nivel de Servicio": "0.7629179599668661"
+    },
+    {
+      "Zona": "ZONA VALLEDUPAR",
+      "NombreEstadoProducto": "Nivelación De Inventarios",
+      "Nivel de Servicio": "0.7481271400495345"
+    },
+    {
+      "Zona": "ZONA ANTIOQUIA",
+      "NombreEstadoProducto": "Nivelación De Inventarios",
+      "Nivel de Servicio": "0.7425625746244952"
+    },
+    {
+      "Zona": "ZONA CALI NORTE",
+      "NombreEstadoProducto": "Nivelación De Inventarios",
+      "Nivel de Servicio": "0.7397107682850744"
+    },
+    {
+      "Zona": "ZONA CALI SUR",
+      "NombreEstadoProducto": "Nivelación De Inventarios",
+      "Nivel de Servicio": "0.7324695262619224"
+    },
+    {
+      "Zona": "ZONA VILLAVICENCIO",
+      "NombreEstadoProducto": "Nivelación De Inventarios",
+      "Nivel de Servicio": "0.6968335298211591"
+    },
+    {
+      "Zona": "ZONA BOGOTA SUR",
+      "NombreEstadoProducto": "Nivelación De Inventarios",
+      "Nivel de Servicio": "0.6800583062318043"
+    },
+    {
+      "Zona": "ZONA BARRANQUILLA",
+      "NombreEstadoProducto": "Nivelación De Inventarios",
+      "Nivel de Servicio": "0.6752128435122727"
+    },
+    {
+      "Zona": "ZONA ORIENTE",
+      "NombreEstadoProducto": "Nivelación De Inventarios",
+      "Nivel de Servicio": "0.664222455034222"
+    },
+    {
+      "Zona": "ZONA BOGOTA NORTE",
+      "NombreEstadoProducto": "Nivelación De Inventarios",
+      "Nivel de Servicio": "0.6052430998994025"
+    },
+    {
+      "Zona": "ZONA CARTAGENA",
+      "NombreEstadoProducto": "Nivelación De Inventarios",
+      "Nivel de Servicio": "0.5934825399115301"
+    },
+    {
+      "Zona": "ZONA ANTIOQUIA",
+      "NombreEstadoProducto": "Recogida A Inactivo",
+      "Nivel de Servicio": "0.5"
+    },
+    {
+      "Zona": "ZONA CALI SUR",
+      "NombreEstadoProducto": "Recogida A Inactivo",
+      "Nivel de Servicio": "0.5"
+    },
+    {
+      "Zona": "ZONA MONTERIA",
+      "NombreEstadoProducto": "Nuevo",
+      "Nivel de Servicio": "0.3671807853160516"
+    },
+    {
+      "Zona": "ZONA VALLEDUPAR",
+      "NombreEstadoProducto": "Nuevo",
+      "Nivel de Servicio": "0.3577688849337075"
+    },
+    {
+      "Zona": "ZONA CALI SUR",
+      "NombreEstadoProducto": "Activo",
+      "Nivel de Servicio": "0.3354846684623037"
+    },
+    {
+      "Zona": "ZONA TOLIMA GRANDE",
+      "NombreEstadoProducto": "Recogida A Inactivo",
+      "Nivel de Servicio": "0.3285386768435907"
+    },
+    {
+      "Zona": "ZONA CALI NORTE",
+      "NombreEstadoProducto": "Activo",
+      "Nivel de Servicio": "0.3275806990227985"
+    },
+    {
+      "Zona": "ZONA EJE CAFETERO",
+      "NombreEstadoProducto": "Activo",
+      "Nivel de Servicio": "0.3181839828229955"
+    },
+    {
+      "Zona": "ZONA TOLIMA GRANDE",
+      "NombreEstadoProducto": "Activo",
+      "Nivel de Servicio": "0.3164894034282766"
+    },
+    {
+      "Zona": "ZONA VALLEDUPAR",
+      "NombreEstadoProducto": "Activo",
+      "Nivel de Servicio": "0.3029818358294768"
+    },
+    {
+      "Zona": "ZONA VILLAVICENCIO",
+      "NombreEstadoProducto": "Activo",
+      "Nivel de Servicio": "0.28765770387202"
+    },
+    {
+      "Zona": "ZONA BARRANQUILLA",
+      "NombreEstadoProducto": "Activo",
+      "Nivel de Servicio": "0.2808373447195971"
+    },
+    {
+      "Zona": "ZONA MONTERIA",
+      "NombreEstadoProducto": "Activo",
+      "Nivel de Servicio": "0.2778550375228284"
+    },
+    {
+      "Zona": "ZONA BOGOTA SUR",
+      "NombreEstadoProducto": "Activo",
+      "Nivel de Servicio": "0.2746253501752258"
+    },
+    {
+      "Zona": "ZONA ORIENTE",
+      "NombreEstadoProducto": "Activo",
+      "Nivel de Servicio": "0.2733884824263065"
+    },
+    {
+      "Zona": "ZONA ANTIOQUIA",
+      "NombreEstadoProducto": "Activo",
+      "Nivel de Servicio": "0.270990711888664"
+    },
+    {
+      "Zona": "ZONA CALI NORTE",
+      "NombreEstadoProducto": "Recogida A Inactivo",
+      "Nivel de Servicio": "0.2693760637635435"
+    },
+    {
+      "Zona": "ZONA CARTAGENA",
+      "NombreEstadoProducto": "Nuevo",
+      "Nivel de Servicio": "0.2685073298836818"
+    },
+    {
+      "Zona": "ZONA CALI SUR",
+      "NombreEstadoProducto": "Nuevo",
+      "Nivel de Servicio": "0.2683035466437399"
+    },
+    {
+      "Zona": "ZONA BARRANQUILLA",
+      "NombreEstadoProducto": "Nuevo",
+      "Nivel de Servicio": "0.2596534045672567"
+    },
+    {
+      "Zona": "ZONA CARTAGENA",
+      "NombreEstadoProducto": "Activo",
+      "Nivel de Servicio": "0.2569002102168295"
+    },
+    {
+      "Zona": "ZONA EJE CAFETERO",
+      "NombreEstadoProducto": "Nuevo",
+      "Nivel de Servicio": "0.2375651610966172"
+    },
+    {
+      "Zona": "ZONA BOGOTA NORTE",
+      "NombreEstadoProducto": "Activo",
+      "Nivel de Servicio": "0.2361568216101044"
+    },
+    {
+      "Zona": "ZONA TOLIMA GRANDE",
+      "NombreEstadoProducto": "Transición A Inactivo",
+      "Nivel de Servicio": "0.2119073708674667"
+    },
+    {
+      "Zona": "ZONA CALI NORTE",
+      "NombreEstadoProducto": "Nuevo",
+      "Nivel de Servicio": "0.2079485854683459"
+    },
+    {
+      "Zona": "ZONA VILLAVICENCIO",
+      "NombreEstadoProducto": "Nuevo",
+      "Nivel de Servicio": "0.1761938741970642"
+    },
+    {
+      "Zona": "ZONA ANTIOQUIA",
+      "NombreEstadoProducto": "Nuevo",
+      "Nivel de Servicio": "0.1489963143173644"
+    },
+    {
+      "Zona": "ZONA ORIENTE",
+      "NombreEstadoProducto": "Nuevo",
+      "Nivel de Servicio": "0.1308979162761381"
+    },
+    {
+      "Zona": "ZONA BOGOTA NORTE",
+      "NombreEstadoProducto": "Nuevo",
+      "Nivel de Servicio": "0.1293825589397379"
+    },
+    {
+      "Zona": "ZONA TOLIMA GRANDE",
+      "NombreEstadoProducto": "Nuevo",
+      "Nivel de Servicio": "0.1262060911131869"
+    },
+    {
+      "Zona": "ZONA ANTIOQUIA",
+      "NombreEstadoProducto": "Transición A Descontinuado",
+      "Nivel de Servicio": "0.1211563500132338"
+    },
+    {
+      "Zona": "ZONA CALI SUR",
+      "NombreEstadoProducto": "Inactivo",
+      "Nivel de Servicio": "0.1164196641105901"
+    },
+    {
+      "Zona": "ZONA BOGOTA SUR",
+      "NombreEstadoProducto": "Transición A Inactivo",
+      "Nivel de Servicio": "0.108298621784786"
+    },
+    {
+      "Zona": "ZONA VALLEDUPAR",
+      "NombreEstadoProducto": "Recogida A Descontinuado",
+      "Nivel de Servicio": "0.107081377580771"
+    },
+    {
+      "Zona": "ZONA BOGOTA SUR",
+      "NombreEstadoProducto": "Recogida A Inactivo",
+      "Nivel de Servicio": "0.1003945230912045"
+    },
+    {
+      "Zona": "ZONA BOGOTA SUR",
+      "NombreEstadoProducto": "Nuevo",
+      "Nivel de Servicio": "0.1002548881548578"
+    },
+    {
+      "Zona": "ZONA CALI NORTE",
+      "NombreEstadoProducto": "Inactivo",
+      "Nivel de Servicio": "0.09103868170669277"
+    },
+    {
+      "Zona": "ZONA BOGOTA SUR",
+      "NombreEstadoProducto": "Transición A Descontinuado",
+      "Nivel de Servicio": "0.0887387823952854"
+    },
+    {
+      "Zona": "ZONA BARRANQUILLA",
+      "NombreEstadoProducto": "Transición A Inactivo",
+      "Nivel de Servicio": "0.0757149478413182"
+    },
+    {
+      "Zona": "ZONA CALI SUR",
+      "NombreEstadoProducto": "Transición A Inactivo",
+      "Nivel de Servicio": "0.07206657195013744"
+    },
+    {
+      "Zona": "ZONA MONTERIA",
+      "NombreEstadoProducto": "Transición A Inactivo",
+      "Nivel de Servicio": "0.07100580584092946"
+    },
+    {
+      "Zona": "ZONA CARTAGENA",
+      "NombreEstadoProducto": "Transición A Descontinuado",
+      "Nivel de Servicio": "0.07057396878144086"
+    },
+    {
+      "Zona": "ZONA CARTAGENA",
+      "NombreEstadoProducto": "Transición A Inactivo",
+      "Nivel de Servicio": "0.06796986728671807"
+    },
+    {
+      "Zona": "ZONA BOGOTA NORTE",
+      "NombreEstadoProducto": "Recogida A Inactivo",
+      "Nivel de Servicio": "0.05955866560686692"
+    },
+    {
+      "Zona": "ZONA CALI NORTE",
+      "NombreEstadoProducto": "Transición A Inactivo",
+      "Nivel de Servicio": "0.0485601125293072"
+    },
+    {
+      "Zona": "ZONA ORIENTE",
+      "NombreEstadoProducto": "Recogida A Descontinuado",
+      "Nivel de Servicio": "0.04724877904626842"
+    },
+    {
+      "Zona": "ZONA VALLEDUPAR",
+      "NombreEstadoProducto": "Inactivo",
+      "Nivel de Servicio": "0.04583385494023921"
+    },
+    {
+      "Zona": "ZONA ANTIOQUIA",
+      "NombreEstadoProducto": "Transición A Inactivo",
+      "Nivel de Servicio": "0.04468262853742472"
+    },
+    {
+      "Zona": "ZONA CALI NORTE",
+      "NombreEstadoProducto": "Transición A Descontinuado",
+      "Nivel de Servicio": "0.04425434534114914"
+    },
+    {
+      "Zona": "ZONA EJE CAFETERO",
+      "NombreEstadoProducto": "Transición A Inactivo",
+      "Nivel de Servicio": "0.04076264919951465"
+    },
+    {
+      "Zona": "ZONA MONTERIA",
+      "NombreEstadoProducto": "Transición A Descontinuado",
+      "Nivel de Servicio": "0.04015194502778422"
+    },
+    {
+      "Zona": "ZONA CARTAGENA",
+      "NombreEstadoProducto": "Inactivo",
+      "Nivel de Servicio": "0.03920343573952199"
+    },
+    {
+      "Zona": "ZONA BARRANQUILLA",
+      "NombreEstadoProducto": "Gestion De Saldos",
+      "Nivel de Servicio": "0.0370780962035348"
+    },
+    {
+      "Zona": "ZONA VALLEDUPAR",
+      "NombreEstadoProducto": "Supendido - Evaluación",
+      "Nivel de Servicio": "0.03670419561779597"
+    },
+    {
+      "Zona": "ZONA ORIENTE",
+      "NombreEstadoProducto": "Gestion De Saldos",
+      "Nivel de Servicio": "0.03383994703825653"
+    },
+    {
+      "Zona": "ZONA CARTAGENA",
+      "NombreEstadoProducto": "Supendido - Evaluación",
+      "Nivel de Servicio": "0.03148223547702091"
+    },
+    {
+      "Zona": "ZONA EJE CAFETERO",
+      "NombreEstadoProducto": "Inactivo",
+      "Nivel de Servicio": "0.03137788682656755"
+    },
+    {
+      "Zona": "ZONA BOGOTA SUR",
+      "NombreEstadoProducto": "Gestion De Saldos",
+      "Nivel de Servicio": "0.03128296908784663"
+    },
+    {
+      "Zona": "ZONA BARRANQUILLA",
+      "NombreEstadoProducto": "Recogida A Descontinuado",
+      "Nivel de Servicio": "0.0300095312693796"
+    },
+    {
+      "Zona": "ZONA BARRANQUILLA",
+      "NombreEstadoProducto": "Os - Suspendido Orden De Compra",
+      "Nivel de Servicio": "0.02987767062843347"
+    },
+    {
+      "Zona": "ZONA CARTAGENA",
+      "NombreEstadoProducto": "Recogida A Inactivo",
+      "Nivel de Servicio": "0.02973086897158409"
+    },
+    {
+      "Zona": "ZONA CALI SUR",
+      "NombreEstadoProducto": "Recogida A Descontinuado",
+      "Nivel de Servicio": "0.02916068698135533"
+    },
+    {
+      "Zona": "ZONA TOLIMA GRANDE",
+      "NombreEstadoProducto": "Gestion De Saldos",
+      "Nivel de Servicio": "0.02885585755572631"
+    },
+    {
+      "Zona": "ZONA EJE CAFETERO",
+      "NombreEstadoProducto": "Transición A Descontinuado",
+      "Nivel de Servicio": "0.02879592601767448"
+    },
+    {
+      "Zona": "ZONA CALI SUR",
+      "NombreEstadoProducto": "Os - Suspendido Orden De Compra",
+      "Nivel de Servicio": "0.0286598639404543"
+    },
+    {
+      "Zona": "ZONA MONTERIA",
+      "NombreEstadoProducto": "Os - Suspendido Orden De Compra",
+      "Nivel de Servicio": "0.02854689783837029"
+    },
+    {
+      "Zona": "ZONA TOLIMA GRANDE",
+      "NombreEstadoProducto": "Os - Suspendido Orden De Compra",
+      "Nivel de Servicio": "0.02784864784015013"
+    },
+    {
+      "Zona": "ZONA CALI NORTE",
+      "NombreEstadoProducto": "Os - Suspendido Orden De Compra",
+      "Nivel de Servicio": "0.02700664836694266"
+    },
+    {
+      "Zona": "ZONA VILLAVICENCIO",
+      "NombreEstadoProducto": "Transición A Inactivo",
+      "Nivel de Servicio": "0.02610779027173384"
+    },
+    {
+      "Zona": "ZONA BOGOTA NORTE",
+      "NombreEstadoProducto": "Transición A Inactivo",
+      "Nivel de Servicio": "0.02576541523409881"
+    },
+    {
+      "Zona": "ZONA ANTIOQUIA",
+      "NombreEstadoProducto": "Os - Suspendido Orden De Compra",
+      "Nivel de Servicio": "0.02568424094571834"
+    },
+    {
+      "Zona": "ZONA EJE CAFETERO",
+      "NombreEstadoProducto": "Os - Suspendido Orden De Compra",
+      "Nivel de Servicio": "0.02517552108158863"
+    },
+    {
+      "Zona": "ZONA VILLAVICENCIO",
+      "NombreEstadoProducto": "Recogida A Descontinuado",
+      "Nivel de Servicio": "0.02498632390209774"
+    },
+    {
+      "Zona": "ZONA BOGOTA SUR",
+      "NombreEstadoProducto": "Os - Suspendido Orden De Compra",
+      "Nivel de Servicio": "0.02494697504361392"
+    },
+    {
+      "Zona": "ZONA CALI SUR",
+      "NombreEstadoProducto": "Supendido - Evaluación",
+      "Nivel de Servicio": "0.02485635855843984"
+    },
+    {
+      "Zona": "ZONA VALLEDUPAR",
+      "NombreEstadoProducto": "Os - Suspendido Orden De Compra",
+      "Nivel de Servicio": "0.02442154883780947"
+    },
+    {
+      "Zona": "ZONA VILLAVICENCIO",
+      "NombreEstadoProducto": "Os - Suspendido Orden De Compra",
+      "Nivel de Servicio": "0.02373895018671707"
+    },
+    {
+      "Zona": "ZONA BARRANQUILLA",
+      "NombreEstadoProducto": "Transición A Descontinuado",
+      "Nivel de Servicio": "0.02320871584047975"
+    },
+    {
+      "Zona": "ZONA CALI NORTE",
+      "NombreEstadoProducto": "Supendido - Evaluación",
+      "Nivel de Servicio": "0.02260568397730149"
+    },
+    {
+      "Zona": "ZONA BARRANQUILLA",
+      "NombreEstadoProducto": "Supendido - Evaluación",
+      "Nivel de Servicio": "0.02247133807333792"
+    },
+    {
+      "Zona": "ZONA MONTERIA",
+      "NombreEstadoProducto": "Supendido - Evaluación",
+      "Nivel de Servicio": "0.02220036611906502"
+    },
+    {
+      "Zona": "ZONA EJE CAFETERO",
+      "NombreEstadoProducto": "Supendido - Evaluación",
+      "Nivel de Servicio": "0.02193055252350636"
+    },
+    {
+      "Zona": "ZONA VILLAVICENCIO",
+      "NombreEstadoProducto": "Gestion De Saldos",
+      "Nivel de Servicio": "0.02186287774828971"
+    },
+    {
+      "Zona": "ZONA CARTAGENA",
+      "NombreEstadoProducto": "Os - Suspendido Orden De Compra",
+      "Nivel de Servicio": "0.02159618531281273"
+    },
+    {
+      "Zona": "ZONA CALI NORTE",
+      "NombreEstadoProducto": "Gestion De Saldos",
+      "Nivel de Servicio": "0.02092539681776601"
+    },
+    {
+      "Zona": "ZONA CALI SUR",
+      "NombreEstadoProducto": "Gestion De Saldos",
+      "Nivel de Servicio": "0.02086527154431564"
+    },
+    {
+      "Zona": "ZONA TOLIMA GRANDE",
+      "NombreEstadoProducto": "Supendido - Evaluación",
+      "Nivel de Servicio": "0.01986866090367372"
+    },
+    {
+      "Zona": "ZONA CARTAGENA",
+      "NombreEstadoProducto": "Gestion De Saldos",
+      "Nivel de Servicio": "0.01925410869553512"
+    },
+    {
+      "Zona": "ZONA ANTIOQUIA",
+      "NombreEstadoProducto": "Gestion De Saldos",
+      "Nivel de Servicio": "0.01893416094800721"
+    },
+    {
+      "Zona": "ZONA EJE CAFETERO",
+      "NombreEstadoProducto": "Gestion De Saldos",
+      "Nivel de Servicio": "0.01806553059031363"
+    },
+    {
+      "Zona": "ZONA BOGOTA SUR",
+      "NombreEstadoProducto": "Supendido - Evaluación",
+      "Nivel de Servicio": "0.01785944645381049"
+    },
+    {
+      "Zona": "ZONA BOGOTA NORTE",
+      "NombreEstadoProducto": "Os - Suspendido Orden De Compra",
+      "Nivel de Servicio": "0.01670127249392739"
+    },
+    {
+      "Zona": "ZONA VILLAVICENCIO",
+      "NombreEstadoProducto": "Transición A Descontinuado",
+      "Nivel de Servicio": "0.01640887589149703"
+    },
+    {
+      "Zona": "ZONA MONTERIA",
+      "NombreEstadoProducto": "Gestion De Saldos",
+      "Nivel de Servicio": "0.01630414828097189"
+    },
+    {
+      "Zona": "ZONA ORIENTE",
+      "NombreEstadoProducto": "Transición A Descontinuado",
+      "Nivel de Servicio": "0.01586231609944533"
+    },
+    {
+      "Zona": "ZONA TOLIMA GRANDE",
+      "NombreEstadoProducto": "Transición A Descontinuado",
+      "Nivel de Servicio": "0.01583676342385333"
+    },
+    {
+      "Zona": "ZONA ORIENTE",
+      "NombreEstadoProducto": "Os - Suspendido Orden De Compra",
+      "Nivel de Servicio": "0.01475444252808405"
+    },
+    {
+      "Zona": "ZONA MONTERIA",
+      "NombreEstadoProducto": "Descontinuado",
+      "Nivel de Servicio": "0.01450794950026034"
+    },
+    {
+      "Zona": "ZONA VALLEDUPAR",
+      "NombreEstadoProducto": "Transición A Inactivo",
+      "Nivel de Servicio": "0.01426216492412482"
+    },
+    {
+      "Zona": "ZONA BOGOTA NORTE",
+      "NombreEstadoProducto": "Gestion De Saldos",
+      "Nivel de Servicio": "0.01423526057448084"
+    },
+    {
+      "Zona": "ZONA BOGOTA NORTE",
+      "NombreEstadoProducto": "Transición A Descontinuado",
+      "Nivel de Servicio": "0.01402427380536358"
+    },
+    {
+      "Zona": "ZONA TOLIMA GRANDE",
+      "NombreEstadoProducto": "Recogida A Descontinuado",
+      "Nivel de Servicio": "0.01351422750215995"
+    },
+    {
+      "Zona": "ZONA BOGOTA NORTE",
+      "NombreEstadoProducto": "Supendido - Evaluación",
+      "Nivel de Servicio": "0.01341703909259439"
+    },
+    {
+      "Zona": "ZONA VILLAVICENCIO",
+      "NombreEstadoProducto": "Supendido - Evaluación",
+      "Nivel de Servicio": "0.01324354862332019"
+    },
+    {
+      "Zona": "ZONA ANTIOQUIA",
+      "NombreEstadoProducto": "Supendido - Evaluación",
+      "Nivel de Servicio": "0.01262076220828013"
+    },
+    {
+      "Zona": "ZONA MONTERIA",
+      "NombreEstadoProducto": "Recogida A Inactivo",
+      "Nivel de Servicio": "0.01232582420678664"
+    },
+    {
+      "Zona": "ZONA ORIENTE",
+      "NombreEstadoProducto": "Inactivo",
+      "Nivel de Servicio": "0.01224153983431161"
+    },
+    {
+      "Zona": "ZONA TOLIMA GRANDE",
+      "NombreEstadoProducto": "Inactivo",
+      "Nivel de Servicio": "0.01085892191124428"
+    },
+    {
+      "Zona": "ZONA ORIENTE",
+      "NombreEstadoProducto": "Supendido - Evaluación",
+      "Nivel de Servicio": "0.009704727024321043"
+    },
+    {
+      "Zona": "ZONA ORIENTE",
+      "NombreEstadoProducto": "Transición A Inactivo",
+      "Nivel de Servicio": "0.009479575629470832"
+    },
+    {
+      "Zona": "ZONA VALLEDUPAR",
+      "NombreEstadoProducto": "Gestion De Saldos",
+      "Nivel de Servicio": "0.009129706822199784"
+    },
+    {
+      "Zona": "ZONA BOGOTA SUR",
+      "NombreEstadoProducto": "Recogida A Descontinuado",
+      "Nivel de Servicio": "0.00900708741774581"
+    },
+    {
+      "Zona": "ZONA CALI SUR",
+      "NombreEstadoProducto": "Descontinuado",
+      "Nivel de Servicio": "0.007901123355817066"
+    },
+    {
+      "Zona": "ZONA BARRANQUILLA",
+      "NombreEstadoProducto": "Descontinuado",
+      "Nivel de Servicio": "0.007651306856664842"
+    },
+    {
+      "Zona": "ZONA CARTAGENA",
+      "NombreEstadoProducto": "Descontinuado",
+      "Nivel de Servicio": "0.007377620561615699"
+    },
+    {
+      "Zona": "ZONA CALI SUR",
+      "NombreEstadoProducto": "Transición A Descontinuado",
+      "Nivel de Servicio": "0.005451645725881653"
+    },
+    {
+      "Zona": "ZONA BOGOTA SUR",
+      "NombreEstadoProducto": "Descontinuado",
+      "Nivel de Servicio": "0.005229021301200096"
+    },
+    {
+      "Zona": "ZONA EJE CAFETERO",
+      "NombreEstadoProducto": "Descontinuado",
+      "Nivel de Servicio": "0.004846861788313562"
+    },
+    {
+      "Zona": "ZONA BOGOTA NORTE",
+      "NombreEstadoProducto": "Inactivo",
+      "Nivel de Servicio": "0.003778412532964254"
+    },
+    {
+      "Zona": "ZONA VALLEDUPAR",
+      "NombreEstadoProducto": "Transición A Descontinuado",
+      "Nivel de Servicio": "0.003705617828279567"
+    },
+    {
+      "Zona": "ZONA ANTIOQUIA",
+      "NombreEstadoProducto": "Inactivo",
+      "Nivel de Servicio": "0.003704164177077285"
+    },
+    {
+      "Zona": "ZONA CALI NORTE",
+      "NombreEstadoProducto": "Descontinuado",
+      "Nivel de Servicio": "0.003043519703382108"
+    },
+    {
+      "Zona": "ZONA ORIENTE",
+      "NombreEstadoProducto": "Descontinuado",
+      "Nivel de Servicio": "0.002825428482605709"
+    },
+    {
+      "Zona": "ZONA TOLIMA GRANDE",
+      "NombreEstadoProducto": "Descontinuado",
+      "Nivel de Servicio": "0.002694331379375976"
+    },
+    {
+      "Zona": "ZONA BOGOTA NORTE",
+      "NombreEstadoProducto": "Descontinuado",
+      "Nivel de Servicio": "0.00266474687461657"
+    },
+    {
+      "Zona": "ZONA VALLEDUPAR",
+      "NombreEstadoProducto": "Descontinuado",
+      "Nivel de Servicio": "0.002501841983132266"
+    },
+    {
+      "Zona": "ZONA ANTIOQUIA",
+      "NombreEstadoProducto": "Descontinuado",
+      "Nivel de Servicio": "0.002261287935773619"
+    },
+    {
+      "Zona": "ZONA BARRANQUILLA",
+      "NombreEstadoProducto": "Inactivo",
+      "Nivel de Servicio": "0.002169798442042479"
+    },
+    {
+      "Zona": "ZONA VILLAVICENCIO",
+      "NombreEstadoProducto": "Descontinuado",
+      "Nivel de Servicio": "0.001629258161307429"
+    },
+    {
+      "Zona": "ZONA ANTIOQUIA",
+      "NombreEstadoProducto": "Eliminado",
+      "Nivel de Servicio": "0"
+    },
+    {
+      "Zona": "ZONA BARRANQUILLA",
+      "NombreEstadoProducto": "Eliminado",
+      "Nivel de Servicio": "0"
+    },
+    {
+      "Zona": "ZONA BOGOTA NORTE",
+      "NombreEstadoProducto": "Eliminado",
+      "Nivel de Servicio": "0"
+    },
+    {
+      "Zona": "ZONA BOGOTA SUR",
+      "NombreEstadoProducto": "Eliminado",
+      "Nivel de Servicio": "0"
+    },
+    {
+      "Zona": "ZONA CALI NORTE",
+      "NombreEstadoProducto": "Eliminado",
+      "Nivel de Servicio": "0"
+    },
+    {
+      "Zona": "ZONA CALI SUR",
+      "NombreEstadoProducto": "Eliminado",
+      "Nivel de Servicio": "0"
+    },
+    {
+      "Zona": "ZONA CARTAGENA",
+      "NombreEstadoProducto": "Eliminado",
+      "Nivel de Servicio": "0"
+    },
+    {
+      "Zona": "ZONA EJE CAFETERO",
+      "NombreEstadoProducto": "Eliminado",
+      "Nivel de Servicio": "0"
+    },
+    {
+      "Zona": "ZONA MONTERIA",
+      "NombreEstadoProducto": "Eliminado",
+      "Nivel de Servicio": "0"
+    },
+    {
+      "Zona": "ZONA ORIENTE",
+      "NombreEstadoProducto": "Eliminado",
+      "Nivel de Servicio": "0"
+    },
+    {
+      "Zona": "ZONA TOLIMA GRANDE",
+      "NombreEstadoProducto": "Eliminado",
+      "Nivel de Servicio": "0"
+    },
+    {
+      "Zona": "ZONA VALLEDUPAR",
+      "NombreEstadoProducto": "Eliminado",
+      "Nivel de Servicio": "0"
+    },
+    {
+      "Zona": "ZONA VILLAVICENCIO",
+      "NombreEstadoProducto": "Eliminado",
+      "Nivel de Servicio": "0"
+    },
+    {
+      "Zona": "ZONA BOGOTA SUR",
+      "NombreEstadoProducto": "Inactivo",
+      "Nivel de Servicio": "0"
+    },
+    {
+      "Zona": "ZONA MONTERIA",
+      "NombreEstadoProducto": "Inactivo",
+      "Nivel de Servicio": "0"
+    },
+    {
+      "Zona": "ZONA VILLAVICENCIO",
+      "NombreEstadoProducto": "Inactivo",
+      "Nivel de Servicio": "0"
+    },
+    {
+      "Zona": "ZONA ANTIOQUIA",
+      "NombreEstadoProducto": "Recogida A Descontinuado",
+      "Nivel de Servicio": "0"
+    },
+    {
+      "Zona": "ZONA BOGOTA NORTE",
+      "NombreEstadoProducto": "Recogida A Descontinuado",
+      "Nivel de Servicio": "0"
+    },
+    {
+      "Zona": "ZONA CALI NORTE",
+      "NombreEstadoProducto": "Recogida A Descontinuado",
+      "Nivel de Servicio": "0"
+    },
+    {
+      "Zona": "ZONA CARTAGENA",
+      "NombreEstadoProducto": "Recogida A Descontinuado",
+      "Nivel de Servicio": "0"
+    },
+    {
+      "Zona": "ZONA EJE CAFETERO",
+      "NombreEstadoProducto": "Recogida A Descontinuado",
+      "Nivel de Servicio": "0"
+    },
+    {
+      "Zona": "ZONA MONTERIA",
+      "NombreEstadoProducto": "Recogida A Descontinuado",
+      "Nivel de Servicio": "0"
+    },
+    {
+      "Zona": "ZONA BARRANQUILLA",
+      "NombreEstadoProducto": "Recogida A Inactivo",
+      "Nivel de Servicio": "0"
+    },
+    {
+      "Zona": "ZONA EJE CAFETERO",
+      "NombreEstadoProducto": "Recogida A Inactivo",
+      "Nivel de Servicio": "0"
+    },
+    {
+      "Zona": "ZONA ORIENTE",
+      "NombreEstadoProducto": "Recogida A Inactivo",
+      "Nivel de Servicio": "0"
+    },
+    {
+      "Zona": "ZONA VALLEDUPAR",
+      "NombreEstadoProducto": "Recogida A Inactivo",
+      "Nivel de Servicio": "0"
+    },
+    {
+      "Zona": "ZONA VILLAVICENCIO",
+      "NombreEstadoProducto": "Recogida A Inactivo",
+      "Nivel de Servicio": "0"
+    }
+  ]
+}

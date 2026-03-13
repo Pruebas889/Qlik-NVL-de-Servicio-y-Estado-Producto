@@ -1,0 +1,56 @@
+{
+  "Sheet1": [
+    {
+      "Zona": "ZONA BOGOTA NORTE",
+      "Nivel de Servicio": "0.1638919785414764"
+    },
+    {
+      "Zona": "ZONA ORIENTE",
+      "Nivel de Servicio": "0.1710025282666979"
+    },
+    {
+      "Zona": "ZONA CARTAGENA",
+      "Nivel de Servicio": "0.1937366463390497"
+    },
+    {
+      "Zona": "ZONA BOGOTA SUR",
+      "Nivel de Servicio": "0.201088148006337"
+    },
+    {
+      "Zona": "ZONA ANTIOQUIA",
+      "Nivel de Servicio": "0.2062272347595619"
+    },
+    {
+      "Zona": "ZONA VILLAVICENCIO",
+      "Nivel de Servicio": "0.2079369284917232"
+    },
+    {
+      "Zona": "ZONA BARRANQUILLA",
+      "Nivel de Servicio": "0.2211073459766093"
+    },
+    {
+      "Zona": "ZONA MONTERIA",
+      "Nivel de Servicio": "0.2212983225284088"
+    },
+    {
+      "Zona": "ZONA VALLEDUPAR",
+      "Nivel de Servicio": "0.2259778839619866"
+    },
+    {
+      "Zona": "ZONA TOLIMA GRANDE",
+      "Nivel de Servicio": "0.2338880659776489"
+    },
+    {
+      "Zona": "ZONA EJE CAFETERO",
+      "Nivel de Servicio": "0.2375173489194634"
+    },
+    {
+      "Zona": "ZONA CALI NORTE",
+      "Nivel de Servicio": "0.2435524769745469"
+    },
+    {
+      "Zona": "ZONA CALI SUR",
+      "Nivel de Servicio": "0.2532388354074712"
+    }
+  ]
+}
