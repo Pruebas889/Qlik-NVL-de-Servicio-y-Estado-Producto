@@ -819,7 +819,8 @@ def detect_data_type_and_upload(extracted: dict, spreadsheet_id: str, credential
 def upload_estado_producto(extracted: dict, spreadsheet_id: str, credentials_json_path: str, clear: bool = True) -> bool:
     """
     Especial para Grid 4: Lee Zona (Col A), NombreEstadoProducto (Col B), Nivel de Servicio (Col C)
-    y sube a la hoja 'Estado_Producto' LIMPIANDO SOLO LAS COLUMNAS QUE ESCRIBE (A, B, C, D)
+    y sube a la hoja 'Estado_Producto' LIMPIANDO SOLO LAS COLUMNAS QUE ESCRIBE (A, B, C)
+    SIN FECHA - SOLO DATOS DE LA TABLA
     """
     try:
         try:
@@ -860,22 +861,21 @@ def upload_estado_producto(extracted: dict, spreadsheet_id: str, credentials_jso
                     ws = sh.add_worksheet(title=target_sheet, rows=max(100, len(rows) + 5), cols=20)
                     LOG.info(f"Worksheet '{target_sheet}' creada")
 
-                # ====== LIMPIAR SOLO COLUMNAS A-D ======
+                # ====== LIMPIAR SOLO COLUMNAS A-C (YA NO USAMOS D) ======
                 if clear:
                     try:
                         all_values = ws.get_all_values()
                         if len(all_values) > 1:
                             last_row = len(all_values)
-                            clear_range = f"A2:D{last_row}"  # SOLO columnas A, B, C, D
+                            clear_range = f"A2:C{last_row}"  # AHORA SOLO A, B, C
                             ws.batch_clear([clear_range])
-                            LOG.info(f"✅ Columnas A-D limpiadas desde fila 2 hasta {last_row} en '{target_sheet}'")
+                            LOG.info(f"✅ Columnas A-C limpiadas desde fila 2 hasta {last_row} en '{target_sheet}'")
                         else:
                             LOG.info(f"No hay datos previos que limpiar en '{target_sheet}'")
                     except Exception as e:
                         LOG.warning(f"Error al limpiar columnas en '{target_sheet}': {e}")
 
-                # Preparar datos
-                
+                # ====== PREPARAR DATOS - SIN FECHA ======
                 table_data = []
 
                 for r in rows:
@@ -883,15 +883,16 @@ def upload_estado_producto(extracted: dict, spreadsheet_id: str, credentials_jso
                     nombre_estado = r.get(headers[1], '')
                     nivel_servicio = r.get(headers[2], '')
                     
-                    row = [date_str, zona, nombre_estado, nivel_servicio]
+                    # 👇 SOLO LOS 3 CAMPOS, SIN FECHA
+                    row = [zona, nombre_estado, nivel_servicio]
                     table_data.append(row)
 
-                # Ejecutar subida SOLO en columnas A-D
+                # ====== EJECUTAR SUBIDA SOLO EN COLUMNAS A-C ======
                 if table_data:
                     try:
                         ws.update("A2", table_data)
-                        LOG.info(f'✓ Sheet "{target_sheet}" actualizada con {len(table_data)} filas (solo columnas A-D)')
-                        LOG.info(f'✅ Columnas E en adelante permanecen intactas en "{target_sheet}"')
+                        LOG.info(f'✓ Sheet "{target_sheet}" actualizada con {len(table_data)} filas (solo columnas A-C, SIN FECHA)')
+                        LOG.info(f'✅ Columnas D en adelante permanecen intactas en "{target_sheet}"')
                         return True
                     except Exception as e:
                         LOG.error(f"Error al actualizar sheet '{target_sheet}': {e}", exc_info=True)
